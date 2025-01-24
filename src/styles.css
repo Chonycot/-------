@@ -8,6 +8,13 @@
   height: 300px;
 }
 
+.btn{
+  text-decoration: none;
+  background-color: cornflowerblue;
+  border-radius: 8px;
+  padding: 10px;
+}
+
 .router-nav-container{
   display: flex;
   flex-direction: row;
