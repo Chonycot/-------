@@ -1,13 +1,14 @@
 import React from 'react';
 
-const TaskList = ({ tasks }) => {
+const TaskList = ({tasks}) => {
     return (
         <div>
             <p>Task List</p>
             {tasks.map((task, index) => {
                 return (
                     <div key={index}>
-                        {console.log(task, index)}
+                        {console.log(`task - ${task}`)}
+                        {console.log(`tasks - ${tasks}`)}
                         <p>Номер задачи - {index + 1}</p>
                         <p>Имя исполнителя - {task.name}</p>
                         <p>Фамилия исполнителя - {task.surname}</p>
