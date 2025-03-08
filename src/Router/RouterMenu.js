@@ -7,6 +7,7 @@ const RouterMenu = () => {
         <Routes>
             <Route path="/home" element={null}/>
             <Route path="/tasks" element={<TaskManager/>}/>
+            <Route path="/tasks" element={<TaskManager/>}/>
         </Routes>
     );
 };

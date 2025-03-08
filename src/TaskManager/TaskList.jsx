@@ -1,26 +1,21 @@
-import React from 'react';
+import React from "react";
 
-const TaskList = ({tasks}) => {
-    return (
-        <div>
-            <p>Task List</p>
-            {tasks.map((task, index) => {
-                return (
-                    <div key={index}>
-                        {console.log(`task - ${task}`)}
-                        {console.log(`tasks - ${tasks}`)}
-                        <p>Номер задачи - {index + 1}</p>
-                        <p>Имя исполнителя - {task.name}</p>
-                        <p>Фамилия исполнителя - {task.surname}</p>
-                        <p>Отчество исполнителя - {task.lastname}</p>
-                        <div>
-                            {task.desc}
-                        </div>
-                    </div>
-                )
-            })} 
+const TaskList = ({ tasks }) => {
+  return (
+    <div className="task-list">
+      {tasks.map((task, index) => (
+        <div key={index} className="task-item">
+          <p className="task-name">Имя: {task.name}</p>
+          <p className="task-surname">Фамилия: {task.surname}</p>
+          <p className="task-lastname">Отчество: {task.lastname}</p>
+          <p className="task-date">Дата рождения: {task.date}</p>
+          <p className="task-desc">Описание задачи: {task.desc}</p>
+          <p className="task-delete"><button type="button" value="clickme" onclick="doFunction();" className="baton_1">удалить</button></p>
+          <p className="task-complite"><button type="button" value="clickme" onclick="changeColor()" className="baton_2">выполнено</button></p>
         </div>
-    );
+      ))}
+    </div>
+  );
 };
 
 export default TaskList;

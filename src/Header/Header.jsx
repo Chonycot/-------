@@ -7,7 +7,7 @@ const Header = (props) => {
     return(
         <div className="header-container">
             <HeaderMenu />
-            <HeaderWidget/>
+            {/* <HeaderWidget/> */}
         </div>
     )
 }

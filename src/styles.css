@@ -1,8 +1,10 @@
-body{
+body {
   margin: 0px;
+  background: rgb(2, 0, 36);
+  background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
 }
 
-#root{
+#root {
   margin: 0px;
 }
 
@@ -12,7 +14,7 @@ body{
   font-size: 20px;
 }
 
-.tasks-container_add-task-button{
+.tasks-container_add-task-button {
   margin-top: 10px;
 }
 
@@ -21,30 +23,106 @@ body{
   height: 300px;
 }
 
-.textarea{
+.textarea {
   min-height: 150px;
   min-width: 350px;
 }
 
-.middle-ware-for-pop-up{
+.middle-ware-for-pop-up {
   position: absolute;
   z-index: 1;
   width: 100%;
   height: 100vh;
-  background-color: gray;
+  background-color: black;
   opacity: 0.5;
 }
 
-.btn{
-  text-decoration: none;
-  background-color: cornflowerblue;
+.btn {
+  text-decoration: #caf0f6;
+  background-color: #262d79;
+  color: #caf0f6;
   border-radius: 8px;
   padding: 10px;
 }
 
-.router-nav-container{
+.router-nav-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   padding: 10px 30px;
+}
+
+.task-list {
+  padding-left: 150px;
+  padding-top: 50px;
+}
+
+.task-item {
+  padding: 50px;
+  text-align: left;
+  color: #caf0f6;
+  border: 3px solid black;
+  background: rgba(0, 0, 0, 0.2);
+  margin-right: 150px;
+  display: grid;
+  grid-template-columns: 1fr, 1fr, 1fr;
+  grid-template-rows: 1fr, 1fr;
+  margin-bottom: 100px;
+}
+
+.task-name{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.task-lastname{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.task-surname{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.task-desc{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+.task-date{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.task-complite{
+  justify-self: right;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+.task-delete{
+  justify-self: center;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+
+.baton_1{
+  color: #f6caca;
+  background-color:  #262d79;
+  border-radius: 4px;
+}
+.baton_2{
+  color: #99f0b3;
+  background-color:  #262d79;
+  border-radius: 4px;
 }

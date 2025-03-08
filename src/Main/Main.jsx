@@ -3,7 +3,8 @@ import './Main.css';
 
 const Main = (props) => {
     return(
-        <div className="main-container"></div>
+        <div className="main-container">
+        </div>
     )
 }
 
