@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import AddTasks from './AddTasks/AddTasks';
 import TaskList from './TaskList.jsx';
+import { v4 as uuidv4 } from 'uuid'; // Для генерации уникальных ID
+import '../styles.css';
 
 const TaskManager = () => {
     const [addTaskIsOpened, setAddTaskIsOpened] = useState(false);
@@ -11,9 +13,21 @@ const TaskManager = () => {
     };
 
     const onAdd = (taskData) => {
+        const newFormId = uuidv4();
         console.log("Добавление задачи:", taskData);
-        setTaskList((prevList) => [...prevList, taskData]);
+        // Создаем новый объект задачи, объединяя taskData и id
+        const newTask = { ...taskData, id: newFormId };
+        setTaskList((prevList) => [...prevList, newTask]);
         setAddTaskIsOpened(false); // Закрываем форму после добавления
+    };
+
+    const deleteForm = (idToDelete) => {
+        // Используем taskList, а не "forms"
+        setTaskList(taskList.filter((task) => task.id !== idToDelete));
+    };
+    const goodForm = (idToDelete) => {
+        // Используем taskList, а не "forms"
+        setTaskList(taskList.filter((task) => task.id !== idToDelete));
     };
 
     return (
@@ -26,7 +40,7 @@ const TaskManager = () => {
                 Добавить задачу
             </button>
             {addTaskIsOpened && <AddTasks onClose={onCloseAddTask} onAdd={onAdd} />}
-            <TaskList tasks={taskList} />
+            <TaskList tasks={taskList} onDelete={deleteForm} /> {/* передаем функцию onDelete*/}
         </div>
     );
 };
